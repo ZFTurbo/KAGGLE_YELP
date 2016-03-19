@@ -37,6 +37,8 @@ def PreprocessImage(path):
     return np.reshape(normed_img, (1, 3, 299, 299))
 
 run_stage = 1
+if not os.path.isdir(os.path.join('..', 'data')):
+    os.mkdir(os.path.join('..', 'data'))
 if run_stage == 1:
     train_index_json = os.path.join('..', 'data', 'train_index.json')
     path = os.path.join('..', 'input', 'train_photos', '*.jpg')
